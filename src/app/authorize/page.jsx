@@ -1,20 +1,37 @@
-export default function page() {
+"use client"
+
+import { useRouter } from "next/navigation"
+
+
+
+export default function Page() {
+
+const router = useRouter()
+
+const GetUser = (formData) => {
+const name = formData.get("name")
+const email = formData.get("email")
+localStorage.setItem("user", JSON.stringify({ name, email }));
+router.push("/")
+}
+
+
   return (
     <div>
       <div>
         <h1>Registration</h1>
       </div>
-      <form action="">
+      <form action={GetUser}>
         <div>
           <label>
             Name
-            <input type="text" />
+            <input type="text" name="name" />
           </label>
         </div>
         <div>
           <label>
             Email
-            <input type="text" />
+            <input type="text" name="email" />
           </label>
         </div>
          <div>
