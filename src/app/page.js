@@ -25,7 +25,7 @@ console.log(user);
   return (
     <div>
       <div>Weather app</div>
-       <span>Welcome: {user.name}</span>
+       <span>Welcome: {user?.name}</span>
       <Link href={"/authorize"}>Authorize</Link>
     </div>
   );
