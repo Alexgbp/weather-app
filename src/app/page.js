@@ -9,7 +9,7 @@ export default function Home() {
  const [user, setUser] = useState(null)
 
   useEffect(() => {
-  const data = JSON.parse( localStorage.getItem("user"))
+  const data = JSON.parse(localStorage.getItem("user"))
   try {
     if(!data){
       router.replace("/authorize")
@@ -27,6 +27,7 @@ console.log(user);
       <div>Weather app</div>
        <span>Welcome: {user?.name}</span>
       <button onClick={() => {
+        localStorage.removeItem("user")
         setUser(null)
         router.replace("/authorize")
       }}>Log out</button>
