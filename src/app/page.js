@@ -13,6 +13,7 @@ export default function Home() {
   try {
     if(!data){
       router.replace("/authorize")
+      return
     }
   } catch (error) {
     console.log("Error");
