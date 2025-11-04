@@ -26,7 +26,10 @@ console.log(user);
     <div>
       <div>Weather app</div>
        <span>Welcome: {user?.name}</span>
-      <Link href={"/authorize"}>Authorize</Link>
+      <button onClick={() => {
+        setUser(null)
+        router.replace("/authorize")
+      }}>Log out</button>
     </div>
   );
 }
