@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function InputComponent({inpuTitle, type, name, value}) {
+export default function InputComponent({inpuTitle, type, name}) {
     return (
         <div>
             <label style={{
@@ -8,7 +8,9 @@ export default function InputComponent({inpuTitle, type, name, value}) {
                 gap: "20px",
                 alignItems: "center"
             }}>
-                <input placeholder={inpuTitle} style={{
+                <input 
+                placeholder={inpuTitle} 
+                style={{
                     outline: "none",
                     width: "250px",
                     border: "none",
