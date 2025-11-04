@@ -11,10 +11,7 @@ export default function Home() {
   useEffect(() => {
   const data = JSON.parse(localStorage.getItem("user"))
   try {
-    if(!data){
-      router.replace("/authorize")
-      return
-    }
+  
   } catch (error) {
     console.log("Error");
   } finally{
