@@ -29,7 +29,6 @@ console.log(user);
        <span>Welcome: {user?.name}</span>
       <button onClick={() => {
         localStorage.removeItem("user")
-        setUser(null)
         router.replace("/authorize")
       }}>Log out</button>
     </div>
