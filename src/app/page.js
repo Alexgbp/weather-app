@@ -27,6 +27,10 @@ export default function Home() {
 
 
 const getValue = async() => {
+  if(value.length <= 2){
+    console.log("error");
+    return
+  }
   const req = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${value}`)
   const respn = await req.json()
   const lat = respn.results[0].latitude
@@ -41,6 +45,7 @@ const getTemperature = async () =>{
   const getData =  await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${data.lat}&longitude=${data.lon}&hourly=temperature_2m&daily=temperature_2m_max,precipitation_sum&timezone=Europe/Moscow`)
   const weather = await getData.json()
   setResult(weather)
+  console.log(weather);
   setValue("")
   } catch (error) {
     console.log(error);
